@@ -1,12 +1,12 @@
 # Revenue Assurance & Audit Analytics
 
-**An accounting and controls investigation system for a fictional automotive parts distributor. All company data is synthetic.**
+I built this project to investigate how differences between orders, shipments, invoices, cash receipts, and general-ledger postings affect revenue and accounts receivable. I wanted to trace the records behind a balance and work out which differences need an accounting adjustment, better supporting evidence, or a stronger control.
 
-Built as an Accounting Information Systems / Business Analytics portfolio case for audit, technology risk, internal audit, accounting advisory and analytics interviews. The focus is transaction evidence, accrual accounting, reconciliations and control judgment.
+The case follows Northstar Parts, a fictional automotive parts distributor with four branches. **All company data is synthetic.**
 
-## Actual results from the included dataset
+## Results
 
-The executed SQL pipeline generated **12,024 invoices**, 240 customers and four branches for fiscal 2025, plus orders/lines, shipments/lines, invoices/lines, returns, credits, receipts, applications, roles, activity logs and balanced journals.
+I generated **12,024 invoices** across 240 customers and four branches for fiscal 2025. Each invoice is supported by related order, shipment, payment, return, credit, access-log, and journal records where applicable. I also included deliberate errors and clean edge cases so I could test both exception detection and reconciliation.
 
 | Transaction procedure | Exception rows |
 |---|---:|
@@ -30,11 +30,11 @@ Year-end subledger AR is **$1,912,899.34**; GL AR is **$1,924,878.04**. The **$1
 
 Unique flagged transaction value is **$212,800.75**. The conservative deduplicated potential exposure envelope is **$133,727.95**. Quantified arithmetic extract differences total **$1,710.00**. These are different measures, not confirmed accounting misstatements or actual loss. Actual loss is **not assessed**. See the [accounting methodology](docs/accounting_methodology.md) for interpretation and the [executive findings](reports/executive_findings.md) for follow-up.
 
-## Verification and screenshots
+## Validation and screenshots
 
-**38 pytest tests passed**, including accounting identities, exact seeded detection, reproducibility, Excel export checks, and Streamlit default/branch/type filter interactions. **81 SQL/SQLite checks also passed.** The fixture evaluation detected all 222 planted rule/item pairs with no unexpected pairs; this is synthetic fixture validation, not real-world detection accuracy.
+I checked the accounting logic and application with **38 passing pytest tests** and **81 passing SQL/SQLite checks**. The tests cover accounting identities, reproducibility, seeded exceptions, clean edge cases, Excel exports, and dashboard filters. The detector matched all 222 planted rule/item pairs with no unexpected pairs. That result applies to this synthetic dataset; it does not establish accuracy on real company data.
 
-The actual application was also exercised in headless Chrome: all six tabs rendered without browser page errors; the CSV download contained 222 exceptions; the Excel download reconciled to the expected AR. Six real screenshots are included. See [verification details](docs/verification.md), [pytest evidence](reports/pytest_results.xml), [SQL evidence](reports/sql_validation.json), and [browser evidence](reports/browser_validation.json).
+I also checked all six dashboard tabs in Chrome and tested the downloads. The exported CSV contained 222 exceptions, and the Excel workpaper agreed to the AR reconciliation. The screenshots below show the running application. See the [validation record](docs/verification.md), [pytest results](reports/pytest_results.xml), [SQL checks](reports/sql_validation.json), and [browser checks](reports/browser_validation.json).
 
 ![Executive audit overview](screenshots/overview.png)
 
@@ -42,13 +42,13 @@ The actual application was also exercised in headless Chrome: all six tabs rende
 
 Additional screenshots: [exceptions](screenshots/exceptions.png), [controls](screenshots/controls.png), [aging](screenshots/aging.png), and [methodology](screenshots/methodology.png).
 
-The tested application environment is macOS arm64, Python 3.11.17, SQLite 3.53.1, pandas 2.3.3, Streamlit 1.66.1, Plotly 6.9.0 and openpyxl 3.1.5. Exact tested package pins are in [requirements-lock-macos.txt](requirements-lock-macos.txt). The GitHub Actions workflow independently rebuilds and tests on Ubuntu/Python 3.11; local evidence does not itself claim a hosted CI pass.
+The tested application environment is macOS arm64, Python 3.11.17, SQLite 3.53.1, pandas 2.3.3, Streamlit 1.66.1, Plotly 6.9.0 and openpyxl 3.1.5. Exact tested package pins are in [requirements-lock-macos.txt](requirements-lock-macos.txt). The GitHub Actions workflow rebuilds the dataset and runs the tests on Ubuntu with Python 3.11. Its current status is available in the repository’s [Actions tab](https://github.com/radhikarajamodi/revenue-assurance-audit-analytics/actions).
 
 ## Run locally on macOS
 
 Prerequisites: **working Python 3.11+** with SQLite, plus Git to clone or update the repository. This is a local project with no paid services, API keys or external company data.
 
-If needed, install Python using the [official macOS installer](https://www.python.org/downloads/macos/). To install Git's developer tools, run `xcode-select --install` and complete the macOS dialog. If Homebrew is already available, `brew install python@3.11` supplies Python. The authoring workspace already contains an isolated `.venv`; it is excluded from GitHub.
+If needed, install Python using the [official macOS installer](https://www.python.org/downloads/macos/). To install Git's developer tools, run `xcode-select --install` and complete the macOS dialog. If Homebrew is already available, `brew install python@3.11` supplies Python.
 
 Clone the repository, then install and run:
 
@@ -105,7 +105,9 @@ Accounting KPIs follow branch and as-of scope. Exception type/severity/start-dat
 
 Ordinary credit sales debit AR and credit revenue; receipts debit cash and credit AR; unallocated advances credit deposits; accepted returns debit sales returns and credit AR. Shipment is assumed to evidence control transfer under the fictional shipping-point contracts. Actual ASC 606 conclusions require the enforceable contract and full facts; see the [FASB's control-transfer discussion](https://storage.fasb.org/Post-Implementation%20Review%E2%80%94Revenue%20from%20Contracts%20with%20Customers%20%28Topic%20606%29.pdf).
 
-SQL performs meaningful independent aggregation, date filtering, transaction matching, approval testing, customer-risk analysis and AR/revenue reconciliation. Python orchestrates generation, reads SQL results, verifies bridge/aging identities and exports workpapers. Monetary logic uses integer cents or Decimal. Labels live in a separate database and never enter detection inputs.
+I used SQL to aggregate each source independently, match transactions, test dates and approvals, and reconcile AR and revenue. Python handles generation, analysis, workpaper exports, and checks that aging and the reconciliation bridge agree to the subledger. Streamlit and Plotly provide the investigation interface.
+
+I kept monetary calculations in integer cents or Decimal to avoid floating-point accounting errors. I also stored the planted exception labels in a separate database so the detector could not use the answer key.
 
 The fixed seed (606) and SQL arithmetic create deterministic seasonality, customer dependency and payment timing. There is one configured fiscal year/scenario. Clean edge cases include split shipment 101, full-credit invoice 103, partial-payment invoice 119 and unapplied advance 50001. Structural foreign keys are enforced; deliberately invalid business conditions remain detectable.
 
@@ -118,14 +120,14 @@ sql/                         Schema, deterministic generator and executed proced
 tests/                       Accounting, detection, export and app pytest tests
 data/revenue_audit.sqlite     Synthetic transaction extract and detector views
 data/ground_truth/           Separate synthetic answer key
-docs/                        Methodology, dictionary, control matrix, process, interview
+docs/                        Methodology, dictionary, control matrix, process, walkthrough
 reports/                     Actual CSV/XLSX workpapers, findings, results and checksums
 screenshots/                 Six actual application screenshots and capture instructions
 scripts/                     Local run, browser capture, content scan and SQLite fallback
 .github/workflows/           Python 3.11 generation, pytest and artifact CI
 ```
 
-Start with the [risk/control matrix](reports/risk_control_matrix.xlsx), [audit workpapers](reports/audit_workpapers.xlsx), [data dictionary](docs/data_dictionary.md), [revenue-cycle flowchart](docs/process_flow.md), [interview guide](docs/interview_guide.md), and [machine-readable results](reports/summary.json). Report checksums are in [manifest.json](reports/manifest.json).
+Start with the [risk/control matrix](reports/risk_control_matrix.xlsx), [audit workpapers](reports/audit_workpapers.xlsx), [data dictionary](docs/data_dictionary.md), [revenue-cycle flowchart](docs/process_flow.md), [project walkthrough](docs/project_walkthrough.md), and [machine-readable results](reports/summary.json). Report checksums are in [manifest.json](reports/manifest.json).
 
 The dataset omits taxes, FX, inventory/COGS, allowance estimation, complex contracts and historical entitlement changes. Control results are exception procedures, not a control-effectiveness opinion. Success against planted seeds is fixture validation, not evidence of production detection accuracy. Recommendations are proposed, not measured business impacts.
 
@@ -144,10 +146,4 @@ git commit -m 'Update revenue assurance analytics'
 git push origin main
 ```
 
-`scripts/publish_github.sh` performs these checks and pushes an existing checkout only after confirming its Git root and origin match this project. It never force-pushes or creates another repository. The initial delivery used the connected GitHub API because the authoring Mac's system Git is a developer-tool stub.
-
-## Interview framing
-
-“I reconciled distinct revenue-cycle events rather than treating invoices as proof of revenue. The system quantifies inconsistencies, links them to evidence and assertions, and avoids overlapping exposure totals. A fully explained bridge still needs investigation. An auditor would validate extract completeness, inspect contracts and independent shipping/bank support, confirm balances and retest remediation.”
-
-Use the [interview guide](docs/interview_guide.md) for the results and limitations you can defend. The included results were verified locally; rerun the checks after changing data, logic or dependencies.
+`scripts/publish_github.sh` performs these checks and pushes an existing checkout only after confirming its Git root and origin match this project. It never force-pushes or creates another repository.
