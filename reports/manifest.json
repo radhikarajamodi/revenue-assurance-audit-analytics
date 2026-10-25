@@ -1,0 +1,23 @@
+{
+  "README.md": "a8c12f98c889449a49bcea5eb723cea47a2a396792d1d7781d69552c30d320a6",
+  "aging.csv": "07283c4f212add3f65b133fa4b8109f0daccb196ce9643acab179eca2716b6c0",
+  "audit_workpapers.xlsx": "25fc9b3cfaed8f2008d160232c212b85f9b504f536f1344c46814eb90f759c02",
+  "bridge.csv": "fe1d00eabab4c3dc6b72b51deb590d4ef6621fc96771b0f7447f4a9880e5a6f7",
+  "browser_validation.json": "c6925a85db8648a996e48cfac4436429613c2cdb08145422c3546fe0845f8562",
+  "controls.csv": "1a17ee8f8e3d8ad0bb3b11db24aa3347cd9f00124d74aa9a23b97abcb59959ad",
+  "customer_risk.csv": "b6535a415eb0486db30d26376fe91d0d334b2c9d024cd8def43ffe1b418492d6",
+  "data_quality.csv": "2fe8d653f516866e9150f66da93716f51f6a5e99f7933aee8fe2d3731e857308",
+  "detection_evaluation.csv": "95efe3b4576af8c0f49758b3a3d063fbb988d1ff50ad2f813334d3b4ff29561a",
+  "exceptions.csv": "2bc63ce56fcd4f06d5e613cea2db230235ddeebe1e395f4319a66591cde02aff",
+  "executive_findings.md": "88c8704f79d0a44b7cef53fc4ab8f99bfaee08c757524cdc9df446b1789cdd7e",
+  "kpis.csv": "9d05853dd3d4acb1b33d279b6e0ce2e9ed10d0702e1bf0c253edbc4a0be65da4",
+  "publication_review.json": "9379c1fff7af213aaf95e7e36133430357b0cd491d71432a9a3798b42ffbb27e",
+  "pytest_results.xml": "de9bdf3db026d00f4378426e2c4db0b294dd2b52a29732d0e7a7da178ee6ca5c",
+  "reconciliation.csv": "c6bc3f6fce78678015b53323cf860e09f29a189766ecdedf9dca1d5129316822",
+  "reproducibility.json": "3f51cc8f40583368112050fcbb3f9ce261e1bfaa2ca7556507012ba0a1c2de24",
+  "revenue_reconciliation.csv": "5144e349917a6930b4d94ea1c2aab151b59f81543a88b0a2841f3375531538d7",
+  "risk_control_matrix.xlsx": "954ad93e40d21b5ee5f0da5c6eafdf870d51c64b98ab2f55532733e4326d1ef9",
+  "scope.csv": "57e7a3081a3fcd17971bce41eace8585e1d7ee2423d1f613bcd8540b709c29fd",
+  "sql_validation.json": "038413646d5a58f5b40e546b099e27c83e26cdae46f7fc09e2eca3c61b12218c",
+  "summary.json": "86fdada7fe08184f92bdd44351e09e5cca176224d03033f192f4f4ca8f21963c"
+}

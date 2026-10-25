@@ -1,0 +1,334 @@
+{
+  "engine": "3.51.0",
+  "passed": 81,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "SQLite database integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "Foreign key integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "Actual invoice count",
+      "status": "PASS"
+    },
+    {
+      "check": "All journals balanced",
+      "status": "PASS"
+    },
+    {
+      "check": "Money stored as integer cents",
+      "status": "PASS"
+    },
+    {
+      "check": "Cash GL equals receipts",
+      "status": "PASS"
+    },
+    {
+      "check": "Returns debit net revenue",
+      "status": "PASS"
+    },
+    {
+      "check": "No pre-fiscal recognition / zero initial AR",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean split shipment not flagged",
+      "status": "PASS"
+    },
+    {
+      "check": "Clean line-level fulfillment",
+      "status": "PASS"
+    },
+    {
+      "check": "Late approval rejected; timely independent approval accepted",
+      "status": "PASS"
+    },
+    {
+      "check": "Excess credit retained as credit balance",
+      "status": "PASS"
+    },
+    {
+      "check": "Fully credited invoice has no cash allocation",
+      "status": "PASS"
+    },
+    {
+      "check": "Unapplied advance classified as deposit",
+      "status": "PASS"
+    },
+    {
+      "check": "Partial cash preserves unpaid balance",
+      "status": "PASS"
+    },
+    {
+      "check": "Second cash clears partial balance",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-01-01 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-01-01 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-01-01 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-01-01 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-01-01 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-01-01 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-01-01 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-01-01 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-01-01 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-01-01 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-01-01 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-01-01 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-01-01 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-01-01 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-01-01 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-12-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-12-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-12-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-12-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-12-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-12-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-12-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-12-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-12-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-12-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-12-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-12-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2025-12-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2025-12-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2025-12-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2026-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2026-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2026-03-31 branch 0",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2026-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2026-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2026-03-31 branch 1",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2026-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2026-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2026-03-31 branch 2",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2026-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2026-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2026-03-31 branch 3",
+      "status": "PASS"
+    },
+    {
+      "check": "Rollforward 2026-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Aging agrees 2026-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "Bridge explained 2026-03-31 branch 4",
+      "status": "PASS"
+    },
+    {
+      "check": "All planted seeds detected; no unexpected fixture flags",
+      "status": "PASS"
+    },
+    {
+      "check": "Detector DB contains no planted labels",
+      "status": "PASS"
+    },
+    {
+      "check": "One-cent mutation detected without answer key",
+      "status": "PASS"
+    },
+    {
+      "check": "Orphan mutation rejected by FK constraint",
+      "status": "PASS"
+    },
+    {
+      "check": "Fractional-cent mutation rejected",
+      "status": "PASS"
+    }
+  ],
+  "python_pytest": "PASS: 38 tests; see pytest_results.xml",
+  "streamlit_smoke": "PASS: AppTest plus six browser tabs and CSV/Excel downloads",
+  "sql_engine_note": "Native SQLite validation; final Python workpapers use SQLite 3.53.1"
+}

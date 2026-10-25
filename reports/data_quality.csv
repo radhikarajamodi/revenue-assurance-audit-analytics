@@ -1,0 +1,5 @@
+check_name,issue_count,scope
+Invoice/order/shipment line issues,0,Full extract
+Unsupported or excess return credits,1,Full extract
+Employees with conflicting permissions,1,Full extract
+Log actions without matching permission,3,Full extract

@@ -1,0 +1,15 @@
+{
+  "classification": "SYNTHETIC",
+  "review_date": "2026-10-24",
+  "stage": "Final content review before GitHub upload",
+  "scanned_project_files": 81,
+  "credential_pattern_hits": 0,
+  "unexpected_person_or_customer_names": 0,
+  "workbook_xml_parts_parsed": 18,
+  "matrix_xml_parts_parsed": 9,
+  "workbook_reconciliation_matches_csv": true,
+  "pytest_tests_passed": 38,
+  "browser_validation": "PASS",
+  "target_repository": "radhikarajamodi/revenue-assurance-audit-analytics",
+  "limitations": "Pattern scanning complements manual source/schema review; no real audit opinion or loss conclusion."
+}

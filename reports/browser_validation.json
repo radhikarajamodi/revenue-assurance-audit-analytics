@@ -1,0 +1,24 @@
+{
+  "classification": "SYNTHETIC",
+  "scope": "All branches, as-of 2025-12-31",
+  "tabs_rendered": [
+    "Overview",
+    "Accounting workpapers",
+    "Exception explorer",
+    "Controls & risks",
+    "AR & collections",
+    "Methodology"
+  ],
+  "screenshots": [
+    "overview.png",
+    "reconciliation.png",
+    "exceptions.png",
+    "controls.png",
+    "aging.png",
+    "methodology.png"
+  ],
+  "browser_page_errors": [],
+  "csv_download_exception_rows": 222,
+  "excel_download_ar_verified_cents": 191289934,
+  "result": "PASS"
+}

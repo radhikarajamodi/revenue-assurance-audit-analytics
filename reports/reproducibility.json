@@ -1,0 +1,7 @@
+{
+  "classification": "SYNTHETIC",
+  "logical_source_tables_compared": 23,
+  "result": "PASS",
+  "basis": "All rows ordered by rowid; independently regenerated from current schema/generate/views SQL",
+  "database_binary_identity_claimed": false
+}

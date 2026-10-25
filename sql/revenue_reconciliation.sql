@@ -1,0 +1,4 @@
+WITH sl AS (SELECT coalesce(sum(i.amount_cents),0) gross_sales_cents FROM invoices i JOIN orders o USING(order_id) WHERE i.recognition_date BETWEEN substr(:as_of,1,4)||'-01-01' AND :as_of AND (:branch=0 OR o.branch_id=:branch)),
+cr AS(SELECT coalesce(sum(c.amount_cents),0) credits_cents FROM credit_memos c JOIN invoices i USING(invoice_id) JOIN orders o USING(order_id) WHERE c.credit_date BETWEEN substr(:as_of,1,4)||'-01-01' AND :as_of AND (:branch=0 OR o.branch_id=:branch)),
+gl AS(SELECT coalesce(sum(l.credit_cents-l.debit_cents),0) gl_net_revenue_cents FROM journal_entries j JOIN journal_lines l USING(journal_id) WHERE l.account_id IN ('4000','4090') AND j.posting_date BETWEEN substr(:as_of,1,4)||'-01-01' AND :as_of AND (:branch=0 OR j.branch_id=:branch))
+SELECT gross_sales_cents,credits_cents,gross_sales_cents-credits_cents subledger_net_revenue_cents,gl_net_revenue_cents,gl_net_revenue_cents-(gross_sales_cents-credits_cents) difference_cents FROM sl,cr,gl;

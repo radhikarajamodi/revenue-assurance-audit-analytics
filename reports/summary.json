@@ -1,0 +1,36 @@
+{
+  "classification": "SYNTHETIC",
+  "as_of": "2025-12-31",
+  "invoice_count": 12024,
+  "exceptions_by_type": {
+    "AMOUNT_MISMATCH": 48,
+    "APPROVAL_FAILURE": 3,
+    "CASH_CUSTOMER": 1,
+    "CASH_OVERALLOCATED": 1,
+    "CASH_TIMING": 1,
+    "CREDIT_EXCESS": 1,
+    "DUPLICATE": 24,
+    "EARLY_REVENUE": 48,
+    "MANUAL_UNAUTHORIZED": 1,
+    "NO_SHIPMENT": 24,
+    "SOD": 22,
+    "WRONG_PERIOD": 48
+  },
+  "exposure": {
+    "flagged_value_cents": 21280075,
+    "estimated_exposure_cents": 13372795,
+    "quantified_difference_cents": 171000,
+    "unique_items": 197
+  },
+  "reconciliation": {
+    "beginning_ar_cents": 183066650,
+    "credit_sales_cents": 75460100,
+    "collections_cents": 66548250,
+    "credits_cents": 688566,
+    "ending_ar_cents": 191289934,
+    "gl_ar_cents": 192487804,
+    "difference_cents": 1197870
+  },
+  "actual_loss": "Not assessed",
+  "database_sha256": "abe6f2fbda2483c858badcd8d6c4947ac7b3ba91ef7884693d19522a7ad0c766"
+}
